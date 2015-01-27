@@ -1,37 +1,25 @@
 var express = require('express');
 var router = express.Router();
 var https = require('https');
+var request = require('request');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+
   var headers = {
       'User-Agent': 'jaircazarin',
   }
  
   var options = {
-      host: 'api.github.com',
-      port: 443,
-      path: '/users/jaircazarin',
-      method: 'GET',
+      url: 'https://api.github.com/users/jaircazarin',
       headers: headers
   };
- 
-  var req = https.get(options, function(gitHubResp) {
-    console.log("Got response: " + gitHubResp.statusCode);
-    gitHubResp.setEncoding('utf8');
-    var gitHubInfo = '';
-    // another chunk of data has been recieved, so append it to `str`
-    gitHubResp.on('data', function (chunk) {
-      gitHubInfo += chunk;
-    });
- 
-    gitHubResp.on('end', function () {
-      var gitty = JSON.parse(gitHubInfo);
-      res.render('index', { title: 'Express', userinfo: gitty });
-    });
-  })
-  .on('error', function(e) {
-      console.log("Got error: " + e.message);
+
+  request(options, function(error, response, body){
+    if (!error && response.statusCode == 200) {
+      var info = JSON.parse(body);
+      res.render('index', { title: 'Express', userinfo: info });
+    }
   });
 
 });
