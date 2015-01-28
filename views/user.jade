@@ -2,8 +2,13 @@ extends layout
 
 block content
   .jumbotron
-    img(src="/images/jumboMaker.jpg", alt="nothing here! go away!")
-  h1= title
-  p Welcome #{userinfo.name}
-  p #{userinfo.location}
-  img(src="#{userinfo.avatar_url}", alt="#{userinfo.name}")
+    h1= title
+    img(src="/images/jumboMaker.jpg", alt="nothing here! go away!", width="100%")
+  .row
+    .col-sm-6
+      p Welcome #{userinfo.name}
+      p #{userinfo.location}
+    .col-sm-6
+      img(src="#{userinfo.avatar_url}", alt="#{userinfo.name}", class="img-responsive")
+    
+    
