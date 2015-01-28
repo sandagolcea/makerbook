@@ -5,23 +5,26 @@ var request = require('request');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+  res.render('index', { title: 'MakerBook' });
+});
 
+router.get('/user/:id', function(req, res, next){
+  var user=req.params.id;
   var headers = {
-      'User-Agent': 'jaircazarin',
+      'User-Agent': user,
   }
  
   var options = {
-      url: 'https://api.github.com/users/jaircazarin',
+      url: 'https://api.github.com/users/' + user,
       headers: headers
   };
 
   request(options, function(error, response, body){
     if (!error && response.statusCode == 200) {
       var info = JSON.parse(body);
-      res.render('index', { title: 'Express', userinfo: info });
+      res.render('user', { title: 'Makerbook', userinfo: info });
     }
-  });
-
+  });  
 });
 
 module.exports = router;
