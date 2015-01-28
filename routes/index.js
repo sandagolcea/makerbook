@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'MakerBook' });
 });
 
-router.get('/user/:id', function(req, res, next){
+router.get('/user/profile/:id', function(req, res, next){
   var user=req.params.id;
   var headers = {
       'User-Agent': user,
@@ -25,6 +25,10 @@ router.get('/user/:id', function(req, res, next){
       res.render('user', { title: 'Makerbook', userinfo: info });
     }
   });  
+});
+
+router.get('/user/new', function(req,res,next){
+  res.render('./user/new', { title: 'New Maker'});
 });
 
 module.exports = router;
