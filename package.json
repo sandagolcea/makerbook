@@ -1,6 +1,7 @@
 {
   "name": "makerbook",
   "version": "0.0.0",
+  "description": "Book of makers",
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
@@ -13,5 +14,35 @@
     "jade": "~1.9.1",
     "morgan": "~1.5.1",
     "serve-favicon": "~2.2.0"
+  },
+    "engines": {
+    "node": "0.10.x"
   }
 }
+
+
+// {
+//   "name": "node-js-getting-started",
+//   "version": "0.1.2",
+//   "description": "A sample Node.js app using Express 4",
+//   "main": "index.js",
+//   "scripts": {
+//     "start": "node index.js"
+//   },
+//   "dependencies": {
+//     "express": "~4.9.x"
+//   },
+//   "engines": {
+//     "node": "0.10.x"
+//   },
+//   "repository": {
+//     "type": "git",
+//     "url": "https://github.com/heroku/node-js-getting-started"
+//   },
+//   "keywords": [
+//     "node",
+//     "heroku",
+//     "express"
+//   ],
+//   "license": "MIT"
+// }
