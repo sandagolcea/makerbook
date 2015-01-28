@@ -1,4 +1,9 @@
 extends ../layout
 
 block content
-  p Hello World
+  h1= title
+  form(action='/profile', method='POST')
+    p Enter profile url:
+      input(type='text', name='profile_url')
+    p
+      input(type='submit')
