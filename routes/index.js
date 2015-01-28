@@ -10,8 +10,6 @@ router.get('/', function(req, res, next) {
 
 router.post('/user/profile', function(req, res, next){
   var user=req.body.username;
-  console.log("***Got these params:***");
-  console.log(req.body);
   var headers = {
       'User-Agent': user,
   }
@@ -24,8 +22,6 @@ router.post('/user/profile', function(req, res, next){
   request(options, function(error, response, body){
     if (!error && response.statusCode == 200) {
       var info = JSON.parse(body);
-      console.log("***This is my Github info:***");
-      console.log(info);
       res.render('user', { title: 'Makerbook', userinfo: info });
     }
   });  

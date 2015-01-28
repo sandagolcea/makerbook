@@ -1,6 +1,9 @@
 extends layout
 
 block content
+  .jumbotron
+    img(src="/images/jumboMaker.jpg", alt="nothing here! go away!")
   h1= title
   p Welcome #{userinfo.name}
-  p #{userinfo.id}
+  p #{userinfo.location}
+  img(src="#{userinfo.avatar_url}", alt="#{userinfo.name}")
