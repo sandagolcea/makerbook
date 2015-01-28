@@ -2,8 +2,8 @@ extends ../layout
 
 block content
   h1= title
-  form(action='/profile', method='POST')
-    p Enter profile url:
-      input(type='text', name='profile_url')
+  form(action='/user/profile', method='POST')
+    p Enter your github user name: 
+      input(type='text', name='username')
     p
       input(type='submit')
