@@ -4,6 +4,8 @@ block content
   h1= title
   form(action='/user/profile', method='POST')
     p Enter your github user name: 
-      input(type='text', name='username')
+      input(type='text', name='username' id='username')
+    p Enter your github password: 
+      input(type='password', name='password' id='password')
     p
       input(type='submit')
