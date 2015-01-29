@@ -45,13 +45,13 @@ describe('New user page', function(){
     it('username and password', function() {
       casper.start('http://localhost:3000/user/new', function() {
         this.fill('form#signupform', {
-          'username': 'ptolemybarnes',
+          'username': system.env.GITHUBUSERNAME,
           'password': 'mistakenpassword'
         }, true);
       });
 
       casper.then(function(){
-        expect("body").to.not.include.text("Ptolemy");
+        expect("body").to.not.include.text("Welcome");
       });
     });
   });
