@@ -6,7 +6,7 @@ module.exports = function(grunt) {
       options: {
       },
       files: {
-        src: ['test/**/*']
+        src: ['spec/features/*']
       }
     }
   })
